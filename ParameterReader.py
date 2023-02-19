@@ -42,9 +42,3 @@ class ParameterReader:
 		with open(file="parameters.json", mode="r") as file:
 			data = json.load(file)
 			return data["recipient_email"]
-
-if __name__ == "__main__":
-	a = ParameterReader()
-	print(a.RetrieveConnectionString())
-	print(a.RetrieveSenderCredentials())
-	print(a.RetrieveRecipientEmail())
