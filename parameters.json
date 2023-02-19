@@ -1,9 +1,15 @@
 {
-    "satellite_endpoint": "http://api.open-notify.org/iss-now.json",
-    "sunset_info_endpoint": "https://api.sunrise-sunset.org/json",
+    "satellite_endpoint" : "http://api.open-notify.org/iss-now.json",
+    "sunset_info_endpoint" : "https://api.sunrise-sunset.org/json",
     "current_position": {
         "latitude"  : "51.492060",
         "longitude" : "-0.016930",
         "formatted" : "0"
-    }
+    },
+    "smtp_connection_string" : "smtp_connection_string",
+    "credentials": {
+        "email"     : "email",
+        "password"  : "password"
+    },
+    "recipient_email" : "recipient_email"
 }
