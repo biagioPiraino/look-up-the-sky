@@ -16,9 +16,9 @@ class MessageSender:
 			print(error)
 
 	def __connect(self) -> smt.SMTP:
-			parameter_reader = ParameterReader()
-			smtp_connection = smt.SMTP(parameter_reader.RetrieveConnectionString())
-			smtp_connection.starttls()
-			credentials = parameter_reader.RetrieveSenderCredentials() 
-			smtp_connection.login(user=credentials["email"], password=credentials["password"])
-			return smtp_connection
+		parameter_reader = ParameterReader()
+		smtp_connection = smt.SMTP(parameter_reader.RetrieveConnectionString())
+		smtp_connection.starttls()
+		credentials = parameter_reader.RetrieveSenderCredentials() 
+		smtp_connection.login(user=credentials["email"], password=credentials["password"])
+		return smtp_connection
