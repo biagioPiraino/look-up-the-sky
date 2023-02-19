@@ -7,6 +7,11 @@ class Checker:
 		self.__longitude_range = 5
 
 	def CheckCurrentPosition(self, satellite_position: dict) -> bool:
+		"""
+			This method checks whether the satellite position
+			falls within the range specified in the constructor.
+			Both latitude and longitude will be checked independently
+		"""
 		param_reader = ParameterReader()
 		current_location = param_reader.RetrieveCurrentPosition()
 		satellite_within_range = (self.__check_latitude_range(
@@ -17,6 +22,10 @@ class Checker:
 		return satellite_within_range
 
 	def CheckCurrentDateTime(self, sunset_time: datetime) -> bool:
+		"""
+			This method checks whether the current hour is greater or equal
+			than the sunset hour of the current position retrieved from	the API
+		"""
 		return datetime.now().hour >= sunset_time.hour
 
 	def __check_latitude_range(self, satellite_lat: float, personal_lat: float) -> bool:
