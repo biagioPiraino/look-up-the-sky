@@ -29,7 +29,7 @@ class Checker:
 		return datetime.now().hour >= sunset_time.hour
 
 	def __check_latitude_range(self, satellite_lat: float, personal_lat: float) -> bool:
-		return satellite_lat in range(personal_lat - self.__latitude_range, personal_lat + self.__latitude_range) 
+		return (personal_lat - self.__latitude_range) <= satellite_lat <= (personal_lat + self.__latitude_range)
 
 	def __check_longitude_range(self, satellite_lgn: float, personal_lgn: float) -> bool:
-		return satellite_lgn in range(personal_lgn - self.__longitude_range, personal_lgn + self.__longitude_range)
+		return (personal_lgn - self.__longitude_range) <= satellite_lgn <= (personal_lgn + self.__longitude_range)
