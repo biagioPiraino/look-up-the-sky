@@ -23,3 +23,28 @@ class ParameterReader:
 				"formatted": int(data["current_position"]["formatted"])
 			}
 			return current_position
+	
+	def RetrieveConnectionString(self) -> str:
+		with open(file="parameters.json", mode="r") as file:
+			data = json.load(file)
+			return data["smtp_connection_string"]
+	
+	def RetrieveSenderCredentials(self) -> dict:
+		with open(file="parameters.json", mode="r") as file:
+			data = json.load(file)
+			sender_credentials = {
+				"email"			 : data["credentials"]["email"],
+				"password"	 : data["credentials"]["password"],
+			}
+			return sender_credentials
+
+	def RetrieveRecipientEmail(self) -> str:
+		with open(file="parameters.json", mode="r") as file:
+			data = json.load(file)
+			return data["recipient_email"]
+
+if __name__ == "__main__":
+	a = ParameterReader()
+	print(a.RetrieveConnectionString())
+	print(a.RetrieveSenderCredentials())
+	print(a.RetrieveRecipientEmail())
