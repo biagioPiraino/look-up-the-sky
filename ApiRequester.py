@@ -6,7 +6,6 @@ class ApiRequester:
 	def __init__(self) -> None:
 		pass
 
-	@classmethod
 	def RetrieveSatellitePosition(self) -> dict:
 		param_reader = ParameterReader()
 		api_endpoint = param_reader.RetrieveSatelliteEndpoint()
@@ -15,7 +14,6 @@ class ApiRequester:
 		data_formatter = DataFormatter()
 		return data_formatter.FormatSatellitePositionData(response.json())
 
-	@classmethod
 	def RetrieveSunsetInformation(self) -> dict:
 		pass
 
