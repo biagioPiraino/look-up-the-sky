@@ -19,7 +19,7 @@ class ParameterReader:
 			data = json.load(file)
 			current_position = {
 				"lat"			 : float(data["current_position"]["latitude"]),
-				"lng"			 : float(data["current_position"]["longitude"]),
+				"lgn"			 : float(data["current_position"]["longitude"]),
 				"formatted": int(data["current_position"]["formatted"])
 			}
 			return current_position
